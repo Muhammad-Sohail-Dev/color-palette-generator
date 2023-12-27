@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: rgb(66, 180, 167);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(66, 180, 167, 1) 13%,
+    rgba(46, 0, 253, 1) 74%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(66, 180, 167, 1) 13%,
+    rgba(46, 0, 253, 1) 74%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(66, 180, 167, 1) 13%,
+    rgba(46, 0, 253, 1) 74%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#42b4a7",endColorstr="#2e00fd",GradientType=1);
+  font-family: sans-serif;
+}
+.color-palette-generator {
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h1 {
+  color: white;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.palette {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  margin: auto;
+}
+
+.color-box {
+  height: 200px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px;
+  border-radius: 10px;
+}
+.color-box p {
+  font-size: 1.6rem;
+}
+.color-box button {
+  padding: 6px 30px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.buttons {
+  padding: 4px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 1rem;
+}
+div.buttons button {
+  padding: 14px 20px;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+div.buttons button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowingbn5 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowingbn5 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+div.buttons button:active {
+  color: #000;
+}
+
+div.buttons button:active:after {
+  background: transparent;
+}
+
+div.buttons button:hover:before {
+  opacity: 1;
+}
+
+div.buttons button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #191919;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
